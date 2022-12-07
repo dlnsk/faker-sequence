@@ -25,5 +25,12 @@
         "psr-4": {
             "Dlnsk\\Faker\\Tests\\": "tests/Faker"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dlnsk\\Faker\\LaravelSequenceServiceProvider"
+            ]
+        }
     }
 }

@@ -14,8 +14,13 @@ To install, use composer:
 composer require dlnsk/faker-sequence
 ```
 
+
 ## Use
 
+#### Laravel
+This package supports Laravel's auto discovering, so you don't have to do anything else.
+
+#### Other frameworks
 ```php
 # When installed via composer
 require_once 'vendor/autoload.php';
@@ -23,6 +28,8 @@ require_once 'vendor/autoload.php';
 $faker = \Faker\Factory::create();
 $faker->addProvider(new \Dlnsk\Faker\SequenceProvider($faker));
 ```
+
+## Generate
 ### Numeric sequences
 #### Quick use
 ```php

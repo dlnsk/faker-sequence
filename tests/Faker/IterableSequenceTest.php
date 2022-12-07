@@ -55,5 +55,14 @@ class IterableSequenceTest extends TestCase
         $this->assertEquals('one', $this->faker->nextInSequence('test'));
     }
 
+    public function testReset(): void
+    {
+        $this->faker->initSequence('test', ['one', 'two', 'three']);
+        $this->faker->nextInSequence('test');
+        $this->faker->nextInSequence('test');
 
+        $this->faker->resetSequence('test');
+
+        $this->assertEquals('one', $this->faker->nextInSequence('test'));
+    }
 }

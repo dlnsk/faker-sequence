@@ -107,4 +107,14 @@ class NumericSequenceTest extends TestCase
         $this->assertEquals(0, $this->faker->nextInSequence('test'));
     }
 
+    public function testReset(): void
+    {
+        $this->faker->nextInSequence('test');
+        $this->faker->nextInSequence('test');
+
+        $this->faker->resetSequence('test');
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+    }
+
 }

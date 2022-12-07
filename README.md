@@ -28,6 +28,9 @@ $faker->addProvider(new \Dlnsk\Faker\SequenceProvider($faker));
 ```php
 echo $faker->nextInSequence('seq_name');    // 0
 echo $faker->nextInSequence('seq_name');    // 1
+
+$faker->resetSequence('seq_name');
+echo $faker->nextInSequence('seq_name');    // 0
 ```
 
 #### Initialization

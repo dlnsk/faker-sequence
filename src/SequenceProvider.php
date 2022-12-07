@@ -37,4 +37,10 @@ class SequenceProvider extends Base
         return $this->sequences[$name]->getNext();
     }
 
+    public function resetSequence(string $name) {
+        if (isset($this->sequences[$name])) {
+            $this->sequences[$name]->resetPointer();
+        }
+    }
+
 }

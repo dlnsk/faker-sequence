@@ -8,7 +8,7 @@
             "email": "dlnsk@mail.ru"
         }
     ],
-    "keywords": ["faker", "provider", "sequence", "increment", "decrement"],
+    "keywords": ["faker", "provider", "sequence", "increment", "decrement", "iterate"],
     "require": {
         "php": "^7.1 || ^8.0",
         "fakerphp/faker": "^1.10"

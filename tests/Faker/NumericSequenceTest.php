@@ -22,8 +22,58 @@ class NumericSequenceTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testIncrementing(): void
+    public function testInitializingWithoutParams(): void
     {
+        $this->faker->initSequence('test');
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(1, $this->faker->nextInSequence('test'));
+        $this->assertEquals(2, $this->faker->nextInSequence('test'));
+    }
+
+    public function testStartValue(): void
+    {
+        $this->faker->initSequence('test', 100);
+
+        $this->assertEquals(100, $this->faker->nextInSequence('test'));
+    }
+
+    public function testCustomStep(): void
+    {
+        $this->faker->initSequence('test', 1, 10);
+
+        $this->assertEquals(1, $this->faker->nextInSequence('test'));
+        $this->assertEquals(11, $this->faker->nextInSequence('test'));
+        $this->assertEquals(21, $this->faker->nextInSequence('test'));
+    }
+
+    public function testNegativeStep(): void
+    {
+        $this->faker->initSequence('test', 10, -2);
+
+        $this->assertEquals(10, $this->faker->nextInSequence('test'));
+        $this->assertEquals(8, $this->faker->nextInSequence('test'));
+        $this->assertEquals(6, $this->faker->nextInSequence('test'));
+    }
+
+    public function testPositiveBound(): void
+    {
+        $this->faker->initSequence('test', 0, 2, 5);
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(2, $this->faker->nextInSequence('test'));
+        $this->assertEquals(4, $this->faker->nextInSequence('test'));
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+    }
+
+    public function testNegativeBound(): void
+    {
+        $this->faker->initSequence('test', 0, -2, -5);
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(-2, $this->faker->nextInSequence('test'));
+        $this->assertEquals(-4, $this->faker->nextInSequence('test'));
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
     }
 
 }

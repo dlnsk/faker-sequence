@@ -103,7 +103,7 @@ echo $faker->nextInSequence('seq_name');    // { 'firstname' => 'Laura', 'lastna
 
 This package is under the WTFPL license. Do whatever you want with it.
 
-[LICENSE](https://github.com/dlnsk/faker-sequence/LICENSE)
+[LICENSE](https://github.com/dlnsk/faker-sequence/blob/master/LICENSE)
 
 ## Reporting an issue or a feature request
 

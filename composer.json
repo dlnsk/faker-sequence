@@ -1,0 +1,29 @@
+{
+    "name": "dlnsk/faker-sequence",
+    "description": "Faker provider for generating incrementing, decrementing and manual sequences.",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Dmitry Pupinin",
+            "email": "dlnsk@mail.ru"
+        }
+    ],
+    "keywords": ["faker", "provider", "sequence", "increment", "decrement"],
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "fakerphp/faker": "^1.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5.20 || ^8.5.8 || ^9.4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dlnsk\\Faker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dlnsk\\Faker\\Tests\\": "tests/Faker"
+        }
+    }
+}

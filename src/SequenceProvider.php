@@ -30,6 +30,10 @@ class SequenceProvider extends Base
     }
 
     public function nextInSequence(string $name) {
+        if (!isset($this->sequences[$name])) {
+            $this->initSequence($name);
+        }
+
         return $this->sequences[$name]->getNext();
     }
 

@@ -31,6 +31,12 @@ class NumericSequenceTest extends TestCase
         $this->assertEquals(2, $this->faker->nextInSequence('test'));
     }
 
+    public function testUsingWithoutInitialization(): void
+    {
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(1, $this->faker->nextInSequence('test'));
+    }
+
     public function testStartValue(): void
     {
         $this->faker->initSequence('test', 100);

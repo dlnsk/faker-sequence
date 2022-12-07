@@ -2,6 +2,7 @@
 
 namespace Dlnsk\Faker\Tests;
 
+use Dlnsk\Faker\Exceptions\NoMoreException;
 use Dlnsk\Faker\SequenceProvider;
 use Faker\Factory;
 use Faker\Generator;
@@ -65,6 +66,30 @@ class NumericSequenceTest extends TestCase
     public function testPositiveBound(): void
     {
         $this->faker->initSequence('test', 0, 2, 5);
+        $this->expectException(NoMoreException::class);
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(2, $this->faker->nextInSequence('test'));
+        $this->assertEquals(4, $this->faker->nextInSequence('test'));
+
+        $this->faker->nextInSequence('test');
+    }
+
+    public function testNegativeBound(): void
+    {
+        $this->faker->initSequence('test', 0, -2, -5);
+        $this->expectException(NoMoreException::class);
+
+        $this->assertEquals(0, $this->faker->nextInSequence('test'));
+        $this->assertEquals(-2, $this->faker->nextInSequence('test'));
+        $this->assertEquals(-4, $this->faker->nextInSequence('test'));
+
+        $this->faker->nextInSequence('test');
+    }
+
+    public function testPositiveBoundWithLoop(): void
+    {
+        $this->faker->initSequence('test', 0, 2, 5, true);
 
         $this->assertEquals(0, $this->faker->nextInSequence('test'));
         $this->assertEquals(2, $this->faker->nextInSequence('test'));
@@ -72,9 +97,9 @@ class NumericSequenceTest extends TestCase
         $this->assertEquals(0, $this->faker->nextInSequence('test'));
     }
 
-    public function testNegativeBound(): void
+    public function testNegativeBoundWithLoop(): void
     {
-        $this->faker->initSequence('test', 0, -2, -5);
+        $this->faker->initSequence('test', 0, -2, -5, true);
 
         $this->assertEquals(0, $this->faker->nextInSequence('test'));
         $this->assertEquals(-2, $this->faker->nextInSequence('test'));

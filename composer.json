@@ -1,6 +1,6 @@
 {
     "name": "dlnsk/faker-sequence",
-    "description": "Faker provider for generating incrementing, decrementing and manual sequences.",
+    "description": "Faker provider to generate incrementing, decrementing and manual sequences.",
     "license": "WTFPL",
     "authors": [
         {
@@ -15,6 +15,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5.20 || ^8.5.8 || ^9.4.2"
+    },
+    "suggest": {
+        "laravel/framework": "This package supports auto discovering, so if you use Laravel just relax... :)"
     },
     "autoload": {
         "psr-4": {

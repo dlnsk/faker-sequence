@@ -1,9 +1,6 @@
 composer.phar
 vendor/
-clover.xml
-phpunit.xml
 .phpunit.result.cache
-
 .idea
 
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file

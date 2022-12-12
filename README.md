@@ -4,7 +4,9 @@ Sequence Provider for Faker
 This package will allow [Faker](https://github.com/FakerPHP/Faker) to generate
 incrementing, decrementing and manual sequences.
 
-[![Build Status](https://travis-ci.org/dlnsk/faker-sequence.svg?branch=master)](https://travis-ci.org/dlnsk/faker-sequence)
+[![tests](https://github.com/dlnsk/faker-sequence/actions/workflows/tests.yml/badge.svg)](https://github.com/dlnsk/faker-sequence/actions/workflows/tests.yml)
+[![Latest Stable Version](http://poser.pugx.org/dlnsk/faker-sequence/v)](https://packagist.org/packages/dlnsk/faker-sequence)
+[![License](http://poser.pugx.org/dlnsk/faker-sequence/license)](https://packagist.org/packages/dlnsk/faker-sequence)
 
 ## Install
 

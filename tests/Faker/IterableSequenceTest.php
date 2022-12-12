@@ -3,6 +3,7 @@
 namespace Dlnsk\Faker\Tests;
 
 use Dlnsk\Faker\Exceptions\NoMoreException;
+use Dlnsk\Faker\Exceptions\NonIterableException;
 use Dlnsk\Faker\SequenceProvider;
 use Faker\Factory;
 use Faker\Generator;
@@ -64,5 +65,12 @@ class IterableSequenceTest extends TestCase
         $this->faker->resetSequence('test');
 
         $this->assertEquals('one', $this->faker->nextInSequence('test'));
+    }
+
+    public function testNonIterable(): void
+    {
+        $this->expectException(NonIterableException::class);
+
+        $this->faker->initSequence('test', new \DateTime());
     }
 }

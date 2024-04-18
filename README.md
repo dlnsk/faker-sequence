@@ -22,6 +22,15 @@ composer require dlnsk/faker-sequence
 #### Laravel
 This package supports Laravel's auto discovering, so you don't have to do anything else.
 
+If you want to use the package in tests initialize sequences in ```setUp```:
+```php
+public function setUp(): void {
+    ...
+    $faker = app(\Faker\Generator::class);
+    $faker->initSequence('seq_name', ['one', 'two']);
+}
+```
+
 #### Other frameworks
 ```php
 # When installed via composer
